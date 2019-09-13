@@ -9,7 +9,16 @@ using System.Threading.Tasks;
 
 namespace ipcdll
 {
-    public class IPC
+    public interface IIPC
+    {
+        void ipcTest();
+        bool isCreated();
+        bool AccessMemoryMap(string name, long size);
+        bool WriteMemoryMap(string name, int data, long offset = 0, long size = 0);
+        bool ReadMemoryMap(string name, out int data, long offset = 0, long size = 0);
+    };
+
+    public class ClassIPC
     {
 
         private string memMapName, mutexName;
@@ -21,6 +30,11 @@ namespace ipcdll
         public bool isCreated()
         {
             return mutexCreated;
+        }
+
+        public void ipcTest()
+        {
+            return;
         }
 
         public bool AccessMemoryMap(string name, long size)

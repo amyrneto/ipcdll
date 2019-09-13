@@ -13,7 +13,7 @@ namespace InterProcessComm
 {
     public partial class formIPC : Form
     {
-        IPC ipc = new IPC();
+        ClassIPC ipc = new ClassIPC();
         public formIPC()
         {
             InitializeComponent();
